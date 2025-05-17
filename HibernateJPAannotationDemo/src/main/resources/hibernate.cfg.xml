@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database Connection -->
+        <!-- This is for mysql
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pavan</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">pavan</property>
+        -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Employee</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">root</property>
+
+
+        <!-- Hibernate Dialect -->
+        <!-- Different databases (MySQL, PostgreSQL, Oracle, etc.) have different SQL syntax and features.
+            Hibernate needs to know which dialect (SQL variant) to use so it can generate correct SQL queries. -->
+        <!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property> -->
+
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Show SQL Queries in Console -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Auto Schema Update -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+        <!-- Mapping File -->
+        <!-- Instead of .hbm.xml, we will use annotated classes -->
+        <mapping class="Customer"/>
+    </session-factory>
+</hibernate-configuration>
